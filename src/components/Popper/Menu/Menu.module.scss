@@ -1,5 +1,6 @@
 .menu-list {
     width: 224px;
+    position: relative;
 
     .menu-item {
         margin-left: 0;
@@ -14,9 +15,71 @@
     width: 100%;
     justify-content: flex-start;
     border-radius: 0;
-    font-weight: 400;
+    font-weight: 600;
     padding: 11px 16px;
+    line-height: 1.8rem;
+
+    &.separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
+
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);
     }
 }
+
+//Header
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+}
+
+.back-btn {
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//Tippy headless arrow
+#arrow,
+#arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: -2px;
+    background-color: rgb(255, 255, 255);
+}
+
+#arrow {
+    visibility: hidden;
+}
+
+#arrow::before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg);
+}
+// #tooltip[data-popper-placement^='top'] > #arrow {
+//     bottom: -4px;
+// }
+
+// #tooltip[data-popper-placement^='bottom'] > #arrow {
+//     top: -4px;
+// }
+
+// #tooltip[data-popper-placement^='left'] > #arrow {
+//     right: -4px;
+// }
+
+// #tooltip[data-popper-placement^='right'] > #arrow {
+//     left: -4px;
+// }
