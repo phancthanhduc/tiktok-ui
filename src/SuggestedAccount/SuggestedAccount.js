@@ -5,24 +5,24 @@ import AccountItem from './AccountItem';
 
 const cx = classNames.bind(styles);
 
-function SuggestedAccount({ label }) {
+function SuggestedAccount({ label, data = [], onSeeAll }) {
     return (
         <div className={cx('wrapper')}>
             <p className={cx('label')}>{label}</p>
-            <AccountItem />
-            <AccountItem />
-            <AccountItem />
-            <AccountItem />
-            <AccountItem />
-            <AccountItem />
-            <AccountItem />
-            <p className={cx('more-btn')}>See all</p>
+            {data.map((account) => (
+                <AccountItem key={account.id} data={account} />
+            ))}
+
+            <p className={cx('more-btn')} onClick={onSeeAll}>
+                See all
+            </p>
         </div>
     );
 }
 
 SuggestedAccount.propTypes = {
     label: PropTypes.string.isRequired,
+    data: PropTypes.array,
 };
 
 export default SuggestedAccount;
