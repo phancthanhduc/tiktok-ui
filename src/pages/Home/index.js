@@ -6,11 +6,11 @@ const PER_PAGE = 5;
 
 function Home() {
     const videoRef = useRef();
-    const [page, setPage] = useState(INIT_PAGE);
+    //const [page, setPage] = useState(INIT_PAGE);
     const [suggestedUsers, setSuggestedUsers] = useState([]);
     useEffect(() => {
         userService
-            .getSuggested({ page, perPage: PER_PAGE })
+            .getSuggested({ page: INIT_PAGE, perPage: PER_PAGE })
             .then((data) => {
                 setSuggestedUsers((prevUsers) => [...prevUsers, ...data]);
             })
