@@ -15,7 +15,7 @@ function Home() {
                 setSuggestedUsers((prevUsers) => [...prevUsers, ...data]);
             })
             .catch((err) => console.log(err));
-    }, [page]);
+    }, []);
 
     // const handleSeeAll = () => {
     //     setPage(page + 1);
